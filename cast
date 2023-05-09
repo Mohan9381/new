@@ -15,4 +15,207 @@ public class typeCasting {
 }
 
 
+class defAccessSpecifier
+{ 
+  void display() 
+     { 
+         System.out.println("You are using defalut access specifier"); 
+     } 
+} 
 
+public class accessSpecifiers {
+
+	public static void main(String[] args) {
+		//default
+		System.out.println("Dafault Access Specifier");
+		defAccessSpecifier obj = new defAccessSpecifier(); 		  
+        obj.display(); 
+
+	}
+}
+
+class priaccessspecifier 
+{ 
+   private void display() 
+    { 
+        System.out.println("You are using private access specifier"); 
+    } 
+} 
+
+public class accessSpecifiers2 {
+
+	public static void main(String[] args) {
+		//private
+		System.out.println("Private Access Specifier");
+		priaccessspecifier  obj = new priaccessspecifier(); 
+        //trying to access private method of another class 
+        //obj.display();
+
+	}
+}
+
+package pack1;
+
+public class proaccessspecifiers {
+
+	protected void display() 
+    { 
+        System.out.println("This is protected access specifier"); 
+    } 
+}
+package pack2;
+
+import pack1.*;
+
+public class accessSpecifiers3 extends proaccessspecifiers {
+
+	public static void main(String[] args) {
+		accessSpecifiers3 obj = new accessSpecifiers3 ();   
+	       obj.display();  
+	}
+
+}
+package pack1;
+
+public class pubaccessspecifiers {
+
+	public void display() 
+    { 
+        System.out.println("This is Public Access Specifiers"); 
+    } 
+}
+
+//create another package
+package pack2;
+import pack1.*;
+
+public class accessSpecifiers4 {
+
+	public static void main(String[] args) {
+		
+		pubaccessspecifiers obj = new pubaccessspecifiers(); 
+        obj.display();  
+		
+	}
+}
+
+
+import java.util.*;  
+public class StaticMethodCallExample  
+{  
+public static void main(String args[])   
+{  
+int a;  
+//calling static method of the Math class  
+a=Math.min(14,97);  
+System.out.println("Minimum number is: " + a);  
+}  
+}  
+
+class Main {
+  private String name;
+  Main() {
+    System.out.println("Constructor Called:");
+    name = "mk";
+  }
+
+  public static void main(String[] args) {
+
+       Main obj = new Main();
+    System.out.println("The name is " + obj.name);
+  }
+}
+
+
+
+import java.util.*;
+
+class GFG {
+	public static void main(String args[])
+	{
+	ArrayList<String> list = new ArrayList<String>();
+		list.add("abc");
+		list.add("efg");
+		list.add("hij");
+		list.add("klm");
+
+		Iterator itr = list.iterator();
+		while (itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+		}
+		}
+
+
+import java.util.*;  
+class MapExample2{  
+ public static void main(String args[]){  
+  Map<Integer,String> map=new HashMap<Integer,String>();  
+  map.put(100,"Ak");  
+  map.put(101,"Vk");  
+  map.put(102,"Rk");  
+  //Elements can traverse in any order  
+  for(Map.Entry m:map.entrySet()){  
+   System.out.println(m.getKey()+" "+m.getValue());  
+  }  
+ }  
+} 
+
+class Outer{  
+ private int data=30;  
+ class Inner{  
+  void msg(){System.out.println("data is "+data);}  
+ }  
+ public static void main(String args[]){  
+  Outer obj=new Outer();  
+  Outer.Inner in=obj.new Inner();  
+  in.msg();  
+ }  
+}  
+
+package com.javacodeexamples.stringbuilderexamples;
+ public class ConvertStringToStringBuilderExample { 
+ public static void main(String[] args) {
+        StringBuilder sbl = new StringBuilder("I am StringBuilder");
+        String str1 = sbl.toString();
+        System.out.println("StringBuilder to String: " + str1);
+        
+        StringBuffer sbf = new StringBuffer("I am StringBuffer");
+        String str2 = sbf.toString();
+        
+        System.out.println("StringBuffer to String: " + str2);
+        
+    }
+}
+
+
+class Testarray{  
+public static void main(String args[]){  
+int a[]=new int[5];//declaration and instantiation  
+a[0]=10;//initialization  
+a[1]=20;  
+a[2]=70;  
+a[3]=40;  
+a[4]=50;  
+//traversing array  
+for(int i=0;i<a.length;i++)//length is the property of array  
+System.out.println(a[i]);  
+}}  
+
+
+import java.util.regex.*;  
+public class RegexExample1{  
+public static void main(String args[]){  
+//1st way  
+Pattern p = Pattern.compile(".s");//. represents single character  
+Matcher m = p.matcher("as");  
+boolean b = m.matches();  
+  
+//2nd way  
+boolean b2=Pattern.compile(".s").matcher("as").matches();  
+  
+//3rd way  
+boolean b3 = Pattern.matches(".s", "as");  
+  
+System.out.println(b+" "+b2+" "+b3);  
+}}  
